@@ -17,17 +17,17 @@ module.exports = {
             payer: {
                 name: 'Ryan',
                 surname: 'Dahl',
-                email: '',
+                email: 'test_user_63274575@testuser.com',
                 phone: {
-                    area_code: 11,
-                    number: 1111111
+                    area_code: '11',
+                    number: 55556666
                 },
                 adress: {
                     zip_code: '1234',
                     street_name: 'Monroe',
                     street_number: 860
                 }
-            }
+            },
             payment_methods: {
                 excluded_payment_methods: [
                     {id: 'visa'}
@@ -42,11 +42,12 @@ module.exports = {
                     id: '1',
                     picture_url: 'https://certificaciontallertercadopago.herokuapp.com/images/products/jordan.jpg',
                     title: 'Nombre del producto',
-                    description: 'Descricpion del producto',
+                    description: 'Descripcion del producto',
                     unit_price: 999,
-                    quantity: 3
+                    quantity: 1
                 }
-            ]
+            ],
+            external_reference: 'juanespinel@gmail.com'
         }
 
         mercadopago.preferences.create(preference).then(response => {
@@ -56,6 +57,5 @@ module.exports = {
             console.log(error)
             res.send('error')
         })
-
     }
 }
